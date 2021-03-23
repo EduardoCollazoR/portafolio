@@ -6,7 +6,6 @@ portafolio=>Portafolio
 contacto=>Contacto
 saludo=> Hola, Yo Soy
 nombre=>Eduardo Collazo
-trabajo-1=> Diseño Web
 trabajo-2=> Aplicaciones Web
 trabajo-3=> Aplicaciones de Escritorio
 trabajos=> Visita Mi Trabajo

@@ -6,7 +6,7 @@ portafolio=>Portfolio
 contacto=>Contact
 saludo=> Hello, I'm
 nombre=>Eduardo Collazo
-trabajo-1=> Web Designer
+
 trabajo-2=> Web Developer
 trabajo-3=> Desktop Developer
 trabajos=>See My Work

@@ -22,14 +22,6 @@ section {
     background-image: url(../images/bg.jpg);
 }
 
-.loading-lang {
-    opacity: 0;
-}
-
-.loading-lang.show {
-    opacity: 1;
-}
-
 .main {
     position: relative;
     width: 100%;
