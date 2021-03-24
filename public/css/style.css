@@ -787,23 +787,77 @@ body {
         transition: 0.4s ease;
     }
     .menu-btn {
-        position: absolute;
-        background: url(../images/bars-solid.svg)no-repeat;
-        background-size: 30px;
-        background-position: center;
-        width: 40px;
-        height: 40px;
+        position: relative;
+        width: 60px;
+        height: 45px;
         right: 0;
         margin: 0 20px;
         cursor: pointer;
-        transition: 0.4s ease;
+        transition: .5s ease-in-out;
     }
-    .menu-btn.active {
+    .menu-btn span {
+        display: block;
+        position: absolute;
+        height: 6px;
+        width: 50%;
+        background: #fff;
+        opacity: 1;
+        transition: .25s ease-in-out;
+    }
+    .menu-btn span:nth-child(even) {
+        left: 50%;
+        border-radius: 0 6px 6px 0;
+    }
+    .menu-btn span:nth-child(odd) {
+        left: 0px;
+        border-radius: 6px 0 0 6px;
+    }
+    .menu-btn span:nth-child(1), .menu-btn span:nth-child(2) {
+        top: 0px;
+    }
+    .menu-btn span:nth-child(3), .menu-btn span:nth-child(4) {
+        top: 18px;
+    }
+    .menu-btn span:nth-child(5), .menu-btn span:nth-child(6) {
+        top: 36px;
+    }
+    .menu-btn.active span:nth-child(1), .menu-btn.active span:nth-child(6) {
+        transform: rotate(45deg);
+    }
+    .menu-btn.active span:nth-child(2), .menu-btn.active span:nth-child(5) {
+        transform: rotate(-45deg);
+    }
+    .menu-btn.active span:nth-child(1) {
+        left: 5px;
+        top: 7px;
+        background: #000;
         z-index: 999;
-        background: url(../images/times-solid.svg)no-repeat;
-        background-size: 25px;
-        background-position: center;
-        transition: 0.4s ease;
+    }
+    .menu-btn.active span:nth-child(2) {
+        left: calc(50% - 5px);
+        top: 7px;
+        background: #000;
+        z-index: 999;
+    }
+    .menu-btn.active span:nth-child(3) {
+        left: -50%;
+        opacity: 0;
+    }
+    .menu-btn.active span:nth-child(4) {
+        left: 100%;
+        opacity: 0;
+    }
+    .menu-btn.active span:nth-child(5) {
+        left: 5px;
+        top: 29px;
+        background: #000;
+        z-index: 999;
+    }
+    .menu-btn.active span:nth-child(6) {
+        left: calc(50% - 5px);
+        top: 29px;
+        background: #000;
+        z-index: 999;
     }
     section {
         padding: 80px 20px;
