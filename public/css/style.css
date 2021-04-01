@@ -14,6 +14,15 @@ section {
     padding: 100px 100px;
 }
 
+.portfolio-info h4 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.portfolio-info a:visited {
+    color: #fff;
+}
+
 .webp .main {
     background-image: url(../images/bg.webp);
 }
@@ -156,12 +165,16 @@ header .navigation a {
     font-size: 1.1rem;
     font-weight: 400;
     text-decoration: none;
-    margin-left: 30px;
+    margin-left: 20px;
     transition: all 0.3s;
 }
 
 header .navigation a:hover {
     color: #3a6cf4;
+}
+
+header.sticky .navigation a {
+    transition: all 0.3s;
 }
 
 header.sticky .navigation a:hover {
@@ -507,7 +520,7 @@ body {
     opacity: 1;
 }
 
-.work .portfolio-item .portfolio-info h4 {
+.work .portfolio-item .portfolio-info h4, .work .portfolio-item .portfolio-info h3 {
     font-size: 18px;
     font-weight: 400;
     color: #fff;
@@ -517,7 +530,7 @@ body {
     opacity: 0;
 }
 
-.work .portfolio-item-inner:hover .portfolio-info h4 {
+.work .portfolio-item-inner:hover .portfolio-info h4, .work .portfolio-item-inner:hover .portfolio-info h3 {
     transform: translateX(0px);
     opacity: 1;
 }
@@ -748,7 +761,7 @@ body {
 
 @media screen and (max-width: 1040px) {
     .main {
-        min-height: 50vh;
+        min-height: 100vh;
     }
     header {
         padding: 12px 20px;
@@ -788,17 +801,17 @@ body {
     }
     .menu-btn {
         position: relative;
-        width: 60px;
-        height: 45px;
+        width: 50px;
+        height: 40px;
         right: 0;
-        margin: 0 20px;
+        margin: 5px 0px;
         cursor: pointer;
         transition: .5s ease-in-out;
     }
     .menu-btn span {
         display: block;
         position: absolute;
-        height: 6px;
+        height: 4px;
         width: 50%;
         background: #fff;
         opacity: 1;
@@ -849,13 +862,13 @@ body {
     }
     .menu-btn.active span:nth-child(5) {
         left: 5px;
-        top: 29px;
+        top: 24px;
         background: #000;
         z-index: 999;
     }
     .menu-btn.active span:nth-child(6) {
         left: calc(50% - 5px);
-        top: 29px;
+        top: 24px;
         background: #000;
         z-index: 999;
     }
