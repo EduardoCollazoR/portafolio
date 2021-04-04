@@ -131,7 +131,7 @@ section {
 header {
     z-index: 999;
     position: fixed;
-    background-color: rgba(234, 240, 240, .1);
+    background-color: transparent;
     top: 0;
     left: 0;
     width: 100%;
@@ -171,6 +171,7 @@ header .navigation a {
 
 header .navigation a:hover {
     color: #3a6cf4;
+    border: none;
 }
 
 header.sticky .navigation a {
