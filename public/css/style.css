@@ -110,7 +110,7 @@ section {
 }
 
 .btn:hover {
-    background: #235bf6;
+    background: #042ea1;
 }
 
 .media-icons {
@@ -429,6 +429,40 @@ body {
     padding-bottom: 40px;
 }
 
+.work-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.work-content .w-more {
+    color: #4e4e4e;
+    font-size: .8rem;
+}
+
+.work-content .w-more .w-ctegory {
+    color: #0078ff;
+}
+
+.work-content .w-like {
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.work-content .w-like a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.work-content .w-like .num-like {
+    font-size: .7rem;
+}
+
+.w-title {
+    font-size: 1.2rem;
+}
+
 .work .portfolio-filter {
     flex: 0 0 100%;
     max-width: 100%;
@@ -458,6 +492,8 @@ body {
 .work .portfolio-item {
     width: 300px;
     margin: 10px;
+    border-radius: 4px;
+    background-color: #fff;
 }
 
 .work .portfolio-item.hide {
@@ -489,192 +525,6 @@ body {
         transform: scale(1);
         opacity: 1;
     }
-}
-
-.work .portfolio-item-inner {
-    border: 4px solid #fff;
-    border-radius: 5px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-}
-
-.work .portfolio-item-inner .portfolio-img img {
-    width: 100%;
-    display: block;
-}
-
-.work .portfolio-item .portfolio-info {
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    padding: 30px;
-    transition: all 0.3s ease;
-    opacity: 0;
-}
-
-.work .portfolio-item-inner:hover .portfolio-info {
-    opacity: 1;
-}
-
-.work .portfolio-item .portfolio-info h4, .work .portfolio-item .portfolio-info h3 {
-    font-size: 18px;
-    font-weight: 400;
-    color: #fff;
-    text-transform: capitalize;
-    transition: all 0.3s ease;
-    transform: translateX(-20px);
-    opacity: 0;
-}
-
-.work .portfolio-item-inner:hover .portfolio-info h4, .work .portfolio-item-inner:hover .portfolio-info h3 {
-    transform: translateX(0px);
-    opacity: 1;
-}
-
-.work .portfolio-item .portfolio-info .icon {
-    height: 40px;
-    width: 40px;
-    background-color: #000;
-    text-align: center;
-    border-radius: 50%;
-    position: absolute;
-    opacity: 0;
-    right: 30px;
-    bottom: 30px;
-    transition: all 0.3s ease;
-    transform: translateX(20px);
-}
-
-.work .portfolio-item-inner:hover .portfolio-info .icon {
-    transform: translateX(0px);
-    opacity: 1;
-}
-
-.work .portfolio-item .portfolio-info .icon .fa {
-    line-height: 40px;
-    color: #fff;
-}
-
-.lightbox {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 100;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    cursor: zoom-out;
-    padding: 30px;
-    overflow-y: scroll;
-}
-
-.lightbox.open {
-    display: flex;
-}
-
-.lightbox .lightbox-content img {
-    height: auto;
-    width: auto;
-    max-height: 500px;
-    max-width: 100%;
-    cursor: pointer;
-    display: block;
-    padding: 40px 0 30px;
-}
-
-.lightbox.open .lightbox-content {
-    animation: lightboxImage .5s ease;
-}
-
-@-webkit-keyframes lightboxImage {
-    0% {
-        transform: scale(0.8);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes lightboxImage {
-    0% {
-        transform: scale(0.8);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.lightbox .lightbox-content {
-    position: relative;
-}
-
-.lightbox .lightbox-content .lightbox-close {
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    top: 0;
-    right: 0px;
-    font-size: 32px;
-    text-align: right;
-    color: #fff;
-    line-height: 40px;
-}
-
-.lightbox .lightbox-content .lightbox-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-    color: #fff;
-    font-weight: 400;
-    z-index: -1;
-}
-
-.lightbox .lightbox-controls .prev-item, .lightbox .lightbox-controls .next-item {
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    background-color: #fff;
-    text-align: center;
-    border-radius: 25%;
-    cursor: pointer;
-    top: 50%;
-    margin-top: -20px;
-    z-index: 110;
-    transition: all 0.3s ease;
-}
-
-.lightbox .lightbox-controls .prev-item:hover, .lightbox .lightbox-controls .next-item:hover {
-    transform: scale(1);
-}
-
-.lightbox .lightbox-controls .prev-item:active, .lightbox .lightbox-controls .next-item:active {
-    transform: scale(1.1);
-}
-
-.lightbox .lightbox-controls .prev-item {
-    left: 30px;
-}
-
-.lightbox .lightbox-controls .next-item {
-    right: 30px;
-}
-
-.lightbox .lightbox-controls .prev-item .fa, .lightbox .lightbox-controls .next-item .fa {
-    font-size: 32px;
-    color: #000;
-    line-height: 40px;
 }
 
 .contact .content {

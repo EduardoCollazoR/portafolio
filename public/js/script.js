@@ -6,7 +6,7 @@ const filterContainer = document.querySelector(".portfolio-filter"),
   totalPortfolioItem = portfolioItems.length;
 
 for (let i = 0; i < totalFilterBtn; i++) {
-  filterBtns[i].addEventListener("click", function () {
+  filterBtns[i].addEventListener("click", function() {
     filterContainer.querySelector(".active").classList.remove("active");
     this.classList.add("active");
 
@@ -29,70 +29,10 @@ for (let i = 0; i < totalFilterBtn; i++) {
   });
 }
 
-// portfolio lightbox
 
-const lightbox = document.querySelector(".lightbox "),
-  lightboxImg = lightbox.querySelector(".lightbox-img"),
-  lightboxClose = lightbox.querySelector(".lightbox-close"),
-  lightboxText = lightbox.querySelector(".caption-text"),
-  lightboxCounter = lightbox.querySelector(".caption-counter");
-let itemIndex = 0;
-
-for (let i = 0; i < totalPortfolioItem; i++) {
-  portfolioItems[i].addEventListener("click", function () {
-    itemIndex = i;
-    changeItem();
-    toggleLightbox();
-  });
-}
-
-function nextItem() {
-  if (itemIndex === totalPortfolioItem - 1) {
-    itemIndex = 0;
-  } else {
-    itemIndex++;
-  }
-  changeItem();
-}
-
-function prevItem() {
-  if (itemIndex === 0) {
-    itemIndex = totalPortfolioItem - 1;
-  } else {
-    itemIndex--;
-  }
-  changeItem();
-}
-
-function toggleLightbox() {
-  lightbox.classList.toggle("open");
-  const body = document.querySelector("body");
-  const scroll = document.querySelector(".scrollToTop-btn");
-  body.appendChild(lightbox);
-  scroll.classList.toggle("scrollToTop-none");
-  body.classList.toggle("fixed-body");
-}
-
-function changeItem() {
-  imgSrc = portfolioItems[itemIndex]
-    .querySelector(".portfolio-img img")
-    .getAttribute("src");
-  lightboxImg.src = imgSrc;
-  lightboxText.innerHTML = portfolioItems[itemIndex].querySelector(
-    "h4"
-  ).innerHTML;
-  lightboxCounter.innerHTML = itemIndex + 1 + " de " + totalPortfolioItem;
-}
-
-// close lightbox
-lightbox.addEventListener("click", function (event) {
-  if (event.target === lightboxClose || event.target === lightbox) {
-    toggleLightbox();
-  }
-});
 
 //navigation bar effects on scroll
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function() {
   const header = document.querySelector("header");
   header.classList.toggle("sticky", window.scrollY > 0);
 });
@@ -117,7 +57,7 @@ navigationItems.forEach((navigationItem) => {
 //scroll to top button
 const scrollBtn = document.querySelector(".scrollToTop-btn");
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function() {
   scrollBtn.classList.toggle("active", window.scrollY > 500);
 });
 
@@ -145,13 +85,13 @@ function reveal() {
 }
 
 // language
-$(document).ready(function () {
+$(document).ready(function() {
   var selector = "#translate";
-  $(selector).on("click", function (e) {
+  $(selector).on("click", function(e) {
     e.preventDefault();
     startLang($(this));
   });
-  var startLang = function (el) {
+  var startLang = function(el) {
     var el = $(el);
     var text = el.attr("data-text");
     var file = el.attr("data-file");
@@ -167,16 +107,16 @@ $(document).ready(function () {
     $("html").attr("lang", file[index]);
   };
 
-  var changeName = function (el, name) {
+  var changeName = function(el, name) {
     $(el).html(name);
   };
 
-  var changeIndex = function (el, index) {
+  var changeIndex = function(el, index) {
     $(el).attr("data-index", ++index);
   };
 
-  var loadLang = function (lang) {
-    var processLang = function (data) {
+  var loadLang = function(lang) {
+    var processLang = function(data) {
       var arr = data.split("\n");
       for (var i in arr) {
         if (lineValid(arr[i])) {
@@ -185,8 +125,8 @@ $(document).ready(function () {
         }
       }
     };
-    var assignText = function (key, value) {
-      $('[data-lang="' + key + '"]').each(function () {
+    var assignText = function(key, value) {
+      $('[data-lang="' + key + '"]').each(function() {
         var attr = $(this).attr("data-destine");
         if (typeof attr !== "undefined") {
           $(this).attr(attr, value);
@@ -195,16 +135,16 @@ $(document).ready(function () {
         }
       });
     };
-    var lineValid = function (line) {
+    var lineValid = function(line) {
       return line.trim().length > 0;
     };
     $(".loading-lang").addClass("show");
     $.ajax({
       url: "lang/" + lang + ".txt",
-      error: function () {
+      error: function() {
         alert("No se cargó traducción");
       },
-      success: function (data) {
+      success: function(data) {
         $(".loading-lang").removeClass("show");
         processLang(data);
       },
