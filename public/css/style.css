@@ -107,6 +107,7 @@ section {
     border-radius: 2px;
     margin-top: 30px;
     transition: 0.5s ease;
+    outline: none;
 }
 
 .btn:hover {
@@ -482,11 +483,13 @@ body {
     border-bottom: 2px solid transparent;
     white-space: nowrap;
     padding-bottom: 2px;
+    outline: none;
 }
 
 .work .portfolio-filter button.active {
     color: #fff;
     border-color: #fff;
+    outline: none;
 }
 
 .work .portfolio-item {
